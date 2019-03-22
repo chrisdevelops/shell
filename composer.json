@@ -1,0 +1,25 @@
+{
+    "name": "crowles/web-terminal",
+    "license": "proprietary",
+    "description": "Terminal inside your browser",
+    "authors": [
+        {
+            "name": "Chris Rowles",
+            "email": "cmrowles@pm.me"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "ext-json": "*",
+        "vlucas/phpdotenv": "^2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Crowles\\Shell\\": "src/Shell/"
+        },
+        "files": ["src/helpers.php"]
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.1"
+    }
+}
