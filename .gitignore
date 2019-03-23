@@ -2,3 +2,5 @@
 /data/terminal.json
 /.env
 /.php_cs.cache
+/build/*
+.idea/*

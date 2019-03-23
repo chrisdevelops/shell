@@ -46,11 +46,11 @@
 
     <target name="check-all" depends="lint,check-style"/>
 
-    <target name="build">
+    <target name="build" depends="check-all">
         <mkdir dir="${basedir}/build"/>
 
         <!-- Load properties -->
-        <property file="${basedir}/config/ant.properties"/>
+        <property file="${basedir}/ant.properties"/>
 
         <!-- Get composer.phar if not existing -->
         <get src="https://getcomposer.org/composer.phar" dest="${basedir}/build/composer.phar" skipexisting="true"/>
@@ -74,56 +74,10 @@
             <arg line="${basedir}/build/composer.phar install --no-dev --optimize-autoloader -d ${basedir}/build/master"/>
         </exec>
 
-        <!-- Remove files which aren't needed on the server -->
-        <delete>
-            <fileset dir="${basedir}/build/master/config/" casesensitive="no">
-                <include name="env.php"/>
-                <include name="*.properties"/>
-            </fileset>
-        </delete>
-
-        <delete>
-            <fileset dir="${basedir}/build/master/" casesensitive="no">
-                <include name="**/composer.json"/>
-                <include name="**/composer.lock"/>
-                <include name="**/phpunit.xml*"/>
-                <include name="**/*.gitignore"/>
-                <include name="**/*.codeclimate.yml"/>
-                <include name="**/*.editorconfig*"/>
-                <include name="**/*.styleci.yml"/>
-                <include name="**/*.scrutinizer.yml"/>
-                <include name="**/*.travis.yml"/>
-                <include name="**/*.appveyor.yml"/>
-                <include name="**/*.coveralls.yml"/>
-                <include name="**/mkdocs.yml"/>
-                <include name="**/phpstan.neon"/>
-                <include name="**/appveyor.yml"/>
-                <include name="**/build.xml"/>
-                <include name="**/.eslintrc.json"/>
-                <include name="**/.gitignore"/>
-                <include name="**/.gitattributes"/>
-                <include name="**/.cs.php"/>
-                <include name="**/.phpstorm.meta.php"/>
-                <include name="**/CHANGELOG.md"/>
-                <include name="**/CONDUCT.md"/>
-                <include name="**/LICENSE*"/>
-                <include name="**/README*"/>
-                <include name="**/CHANGES*"/>
-                <include name="**/CONTRIBUTING*"/>
-                <include name="**/UPGRADE*.md"/>
-            </fileset>
-        </delete>
-
         <!-- Remove folders which aren't needed on the server -->
         <delete includeemptydirs="true">
             <fileset dir="${basedir}/build/master/" casesensitive="no">
                 <include name="**/tests/"/>
-                <include name="**/test/"/>
-                <include name="**/tester/"/>
-                <include name="**/docs/"/>
-                <include name="**/doc/"/>
-                <include name="**/examples/"/>
-                <include name="**/example/"/>
             </fileset>
         </delete>
 
