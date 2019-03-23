@@ -4,6 +4,7 @@ if (!function_exists('env')) {
     /**
      * @param string $envKey
      * @param mixed|null $default
+     *
      * @return mixed
      */
     function env(string $envKey, $default = null)
@@ -17,6 +18,7 @@ if (!function_exists('env')) {
 if (!function_exists('templates_dir')) {
     /**
      * @param string $path
+     *
      * @return string
      */
     function templates_dir(string $path = ''): string
@@ -28,9 +30,10 @@ if (!function_exists('templates_dir')) {
 if (!function_exists('asset')) {
     /**
      * @param string $path
+     *
      * @return string
      */
-    function asset(string $path = '') : string
+    function asset(string $path = ''): string
     {
         return '../../resources/assets' . $path;
     }
@@ -39,9 +42,10 @@ if (!function_exists('asset')) {
 /**
  * @param $data
  * @param bool $fromData
+ *
  * @return string
  */
-function makeInputLine($data, $fromData = true) : string
+function makeInputLine($data, $fromData = true): string
 {
     $command = '';
     $response = '';
@@ -69,6 +73,7 @@ HTML;
 /**
  * @param $needle
  * @param $haystack
+ *
  * @return bool
  */
 function contains($needle, $haystack)

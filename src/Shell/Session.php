@@ -9,6 +9,7 @@ class Session
 
     /**
      * Session constructor.
+     *
      * @param $sessions
      */
     public function __construct($sessions)
@@ -27,6 +28,7 @@ class Session
     /**
      * @param $key
      * @param null $default
+     *
      * @return mixed|null
      */
     public function get(string $key, $default = null)
@@ -41,17 +43,20 @@ class Session
     /**
      * @param string $key
      * @param $value
+     *
      * @return Session
      */
     public function set(string $key, $value): self
     {
         $this->data[$key] = $value;
+
         return $this;
     }
 
     /**
      * @param string $key
      * @param null $default
+     *
      * @return mixed|null
      */
     public function pull(string $key, $default = null)
@@ -67,7 +72,7 @@ class Session
     }
 
     /**
-     * Saves current data to $_SESSION
+     * Saves current data to $_SESSION.
      */
     public function save()
     {

@@ -17,6 +17,7 @@ class Terminal
 
     /**
      * Terminal constructor.
+     *
      * @param Request $request
      * @param Logger $logger
      * @param string $theme
@@ -46,9 +47,9 @@ class Terminal
         }
     }
 
-
     /**
      * @param bool $json
+     *
      * @return array|mixed|string
      */
     private function getHistoryFromData($json = false)
@@ -76,6 +77,7 @@ class Terminal
                 $commands[] = $data['command'];
             }
         }
+
         return $commands;
     }
 
@@ -105,6 +107,7 @@ class Terminal
         if (contains('clear', $command)) {
             $this->data = [];
             $this->request->session->flush();
+
             return;
         }
 
@@ -119,6 +122,7 @@ class Terminal
         }
 
         $this->data[] = array_merge($this->getInputData(), $data);
+
         return;
     }
 
@@ -157,16 +161,19 @@ class Terminal
     /**
      * @param string $root
      * @param string $user
+     *
      * @return string
      */
     private function normalizeRoot(string $root, string $user = null): string
     {
         $user = $user ?? get_current_user();
+
         return str_replace("/home/{$user}", '~', $root);
     }
 
     /**
      * Init, Do's some checks etc...
+     *
      * @return void
      */
     public function init(): void
@@ -179,6 +186,7 @@ class Terminal
 
     /**
      * @param string $command
+     *
      * @return string
      */
     private function normalizeCommand(string $command)
@@ -196,7 +204,7 @@ class Terminal
         $command = $this->request->getPostData('command');
         $this->execute($command);
 
-        header("Location: index.php");
+        header('Location: index.php');
         exit();
     }
 

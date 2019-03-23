@@ -11,6 +11,7 @@ class Logger
 
     /**
      * Logger constructor.
+     *
      * @param $filePath
      */
     public function __construct($filePath)
@@ -43,6 +44,7 @@ class Logger
 
     /**
      * @param array $data
+     *
      * @return Logger
      */
     public function setData(array $data): self
@@ -64,6 +66,7 @@ class Logger
     /**
      * @param $key
      * @param null $default
+     *
      * @return mixed
      */
     public function getLast($key, $default = null)
