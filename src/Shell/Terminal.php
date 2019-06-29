@@ -1,6 +1,6 @@
 <?php
 
-namespace Crowles\Shell;
+namespace App\Shell;
 
 class Terminal
 {
