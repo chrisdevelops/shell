@@ -1,13 +1,6 @@
 {
-    "name": "crowles/web-terminal",
-    "license": "proprietary",
-    "description": "Terminal inside your browser",
-    "authors": [
-        {
-            "name": "Chris Rowles",
-            "email": "cmrowles@pm.me"
-        }
-    ],
+    "name": "chrisdevelops/shell",
+    "description": "A web shell.",
     "require": {
         "php": "^7.2",
         "ext-json": "*",
@@ -16,7 +9,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Crowles\\Shell\\": "src/Shell/"
+            "App\\Shell\\": "src/Shell/"
         },
         "files": ["src/helpers.php"]
     },
