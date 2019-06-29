@@ -2,10 +2,10 @@
 
 require_once __DIR__ . '/bootstrap.php';
 
-use Crowles\Shell\Logger;
-use Crowles\Shell\Request;
-use Crowles\Shell\Session;
-use Crowles\Shell\Terminal;
+use App\Shell\Logger;
+use App\Shell\Request;
+use App\Shell\Session;
+use App\Shell\Terminal;
 
 $post = $_POST ?? [];
 $get = $_GET ?? [];
