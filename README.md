@@ -15,3 +15,8 @@ cp .env.example .emv
 ```sh
 mkdir data && touch data/terminal.json
 ```
+
+4. Serve:
+```sh
+php -S 127.0.0.1:8888
+```
