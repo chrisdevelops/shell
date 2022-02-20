@@ -1,22 +1,33 @@
 # Shell
 A simple web shell.
 
-1. Install dependencies
+Install dependencies
 ```sh
 composer install
 ```
 
-2. Copy `.env.example` and set environment variables:
+Copy `.env.example` and set environment variables:
 ```sh
 cp .env.example .emv
 ```
 
-3. Create terminal buffer:
+For example:
+
+```sh
+APP_NAME="Shell" # Anything you want
+APP_THEME="default" # or darcula, or make your own in templates/
+
+ENABLE_SUDO=true
+SUDO_PASSWORD="MySup3rSecur3Sud0pa55!"
+```
+
+
+Create terminal buffer:
 ```sh
 mkdir data && touch data/terminal.json
 ```
 
-4. Serve:
+Serve:
 ```sh
 php -S 127.0.0.1:8888
 ```
